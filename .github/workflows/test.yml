@@ -1,0 +1,23 @@
+name: Test Project
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get code
+      uses: actions/checkout@v5
+
+    - name: Install NodeJS
+      uses: actions/setup-node@5
+      with:
+        node-version: 22
+    
+    - name: Instakk dependencies
+      run: npm ci
+
+    - name: Run tests
+      run: npm test
+
+
+
+
